@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css';
+import Accordeon from "./components/Accordeon";
 
 const initialData = [
   {
@@ -62,17 +63,7 @@ function App() {
           { interfaceType ? "First" : "Second" } interfacetype
         </button>
       </div>
-      <div className="accordion">
-        {data.map((item, key) => (
-            <div className="item" key={key}>
-              <div className="title" onClick={ () => { clickItemHandler(key) }}>
-                <h2>{ item.question }</h2>
-                <span>{item.visible ? '-' : '+'}</span>
-              </div>
-              <div className={item.visible ? 'content show' : 'content'}>{item.answer}</div>
-            </div>
-        ))}
-      </div>
+      <Accordeon data={data} clickItemHandler={clickItemHandler}/>
     </div>
   );
 }

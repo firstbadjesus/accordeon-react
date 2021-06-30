@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css';
+
 import Accordeon from "./components/Accordeon";
 
 const initialData = [
@@ -26,36 +26,10 @@ const initialData = [
 ]
 
 function App() {
-
-  const [data, setData] = useState(initialData)
-  const [interfaceType, setInterfaceType] = useState(false)
-  const changeInterface = () => {
-
+  const [interfaceType, setInterfaceType]= useState(false)
+  const  changeInterface = () => {
     setInterfaceType(!interfaceType)
-    const newData = [...data];
-    newData.map((item, key) => {
-      item.visible = key === 0;
-      return item;
-    });
   }
-
-  const clickItemHandler = (index) => {
-    const newData = [...data];
-    newData.map((item, key) => {
-      
-      if (key === index) {
-        
-        item.visible = !item.visible;
-      } else {
-        if (interfaceType) {
-          item.visible = false;
-        }
-      }
-      return item;
-    }) 
-    setData(newData)
-  }
-  
   return (
     <div className="container wrapper">
       <div className="options">
@@ -63,7 +37,7 @@ function App() {
           { interfaceType ? "First" : "Second" } interfacetype
         </button>
       </div>
-      <Accordeon data={data} clickItemHandler={clickItemHandler}/>
+      <Accordeon data={initialData} interfaceType={interfaceType} />
     </div>
   );
 }

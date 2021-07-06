@@ -9,9 +9,9 @@ return (
       }}
       >
       <h2>{props.item.question}</h2>
-      <span>{props.item.visible ? "-" : "+"}</span>
+      <span>{props.open ? "-" : "+"}</span>
       </div>
-      <div className={props.item.visible ? "content show" : "content"}>
+      <div className={props.open ? "content show" : "content"}>
       {props.item.answer}
       </div>
    </div>

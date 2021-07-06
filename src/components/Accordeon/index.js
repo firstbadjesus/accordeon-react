@@ -4,28 +4,22 @@ import '../../App.css';
 
 const Accordeon = (props) => {
    const [data, setData] = useState(props.data)
+   const [openIndexes, setOpenIndexes] = useState([]) 
    const clickItemHandler = (index) => {
-      const newData = [...data];
-      newData.map((item, key) => {
-      
-      if (key === index) {
-      
-         item.visible = !item.visible;
+      if(openIndexes.includes(index)) {
+         setOpenIndexes(openIndexes.filter(x => x != index))
       } else {
-         if (props.interfaceType) {
-            item.visible = false;
-         }
-      }
-      return item;
-      }) 
-      setData(newData)
+         setOpenIndexes([...openIndexes, index])
+      }     
    }
    
-
 return (
    <div className="accordeon">
       {data.map((item, key) => (
-         <AccordeonItem item={item} clickItemHandler={clickItemHandler} index={key} key={key} />
+         <AccordeonItem item={item} 
+         open={openIndexes.includes(key)} 
+         clickItemHandler={clickItemHandler} 
+         index={key} key={key} />
       ))}
    </div>
 

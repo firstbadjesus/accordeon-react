@@ -3,11 +3,14 @@ import AccordeonItem from "../AcordeonItem"
 import '../../App.css';
 
 const Accordeon = (props) => {
-   const [data, setData] = useState(props.data)
-   const [openIndexes, setOpenIndexes] = useState([]) 
+   const [data] = useState(props.data)
+   let [openIndexes, setOpenIndexes] = useState([]) 
    const clickItemHandler = (index) => {
+      if(props.interfaceType) {
+         openIndexes = []
+      }
       if(openIndexes.includes(index)) {
-         setOpenIndexes(openIndexes.filter(x => x != index))
+         setOpenIndexes(openIndexes.filter(x => x !== index))
       } else {
          setOpenIndexes([...openIndexes, index])
       }     

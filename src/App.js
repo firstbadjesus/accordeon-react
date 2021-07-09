@@ -1,3 +1,4 @@
+import './index.css';
 import { useState } from 'react'
 
 import Accordeon from "./components/Accordeon";

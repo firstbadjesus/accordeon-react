@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import AccordeonItem from "../AcordeonItem"
-import '../../App.css';
+
+import './index.css';
 
 const Accordeon = (props) => {
    const [data] = useState(props.data)

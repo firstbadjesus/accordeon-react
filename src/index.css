@@ -11,3 +11,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+padding-top: 30px;
+background-color:gray;
+}
+
+.btn-default {
+  border: none;
+  border-radius: 5px;
+  background-color: gray;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.btn-default:hover {
+  background-color: darkgray;
+}
+
+.btn-default:active {
+  background-color: lightgray;
+}
+
+
+.container {
+  height: 100%;
+  width: 100vh;
+  justify-content: center;
+  align-items: center;
+  max-width: 1110px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  background-color:green;
+}
+
+.options {
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 1px solid gainsboro;
+}
+
+.item {
+  margin-bottom: 5px;
+  background-color: lightgray;
+  padding: 10px 20px;
+  cursor: pointer;
+  /* height: 50px; */
+}

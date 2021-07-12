@@ -38,7 +38,6 @@ background-color:gray;
   background-color: lightgray;
 }
 
-
 .container {
   height: 100%;
   width: 100vh;
@@ -64,5 +63,4 @@ background-color:gray;
   background-color: lightgray;
   padding: 10px 20px;
   cursor: pointer;
-  /* height: 50px; */
 }

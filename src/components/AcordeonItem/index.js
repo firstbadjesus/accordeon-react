@@ -1,4 +1,6 @@
 import './index.css';
+import IconMinus from '../UI/Icons/IconMinus';
+import IconPlus from '../UI/Icons/IconPlus';
 
 const AccordeonItem = props => {
   return (
@@ -10,7 +12,7 @@ const AccordeonItem = props => {
         }}
       >
         <h2>{props.item.question}</h2>
-        <span>{props.open ? '-' : '+'}</span>
+        {props.open ? <IconMinus /> : <IconPlus />}
       </div>
       <div className={props.open ? 'content show' : 'content'}>
         {props.item.answer}
